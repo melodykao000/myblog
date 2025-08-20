@@ -7,6 +7,15 @@
 - 📊 展示數據分析與專案成果
 - 🌍 分享海外實習、語言學校與國際交流經驗
 
+##⚡ 注意：
+這個 repo (myblog) 是網站的**原始碼開發專案**，
+部署後會自動輸出到另一個 repo：
+👉 https://github.com/melodykao000/melodykao000.github.io
+
+**網站實際瀏覽位置**：
+👉 https://melodykao000.github.io
+
+
 ---
 
 ## 🗂 目錄 (Table of Contents)
