@@ -7,12 +7,13 @@
 - 📊 展示數據分析與專案成果
 - 🌍 分享海外實習、語言學校與國際交流經驗
 
-### ⚡ 注意：
-這個 repo (myblog) 是網站的**原始碼開發專案**，
-部署後會自動輸出到另一個 repo：
-👉 https://github.com/melodykao000/melodykao000.github.io
+### ⚡ 注意
+本專案 (**myblog**) 為網站的 **原始碼開發倉庫**，包含 Hexo 設定檔、主題與 Markdown 文章。  
 
-**網站實際瀏覽位置**：
+每次執行 `hexo deploy` 時，系統會將編譯後的靜態檔案輸出到另一個部署倉庫：  
+👉 https://github.com/melodykao000/melodykao000.github.io  
+
+**網站實際瀏覽網址**：  
 👉 https://melodykao000.github.io
 
 
