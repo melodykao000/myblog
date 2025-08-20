@@ -1,0 +1,61 @@
+# 請把版本號改成你安裝的 Icarus 版本
+version: 6.1.1
+
+# === 導覽列 ===
+navbar:
+  menu:
+    Home: /
+    Archives: /archives/
+    Categories: /categories/
+    Tags: /tags/
+    Services: /services/
+    About: /about/
+    Contact: /contact/
+  links:
+    GitHub:
+      icon: fab fa-github
+      url: https://github.com/melodykao000
+
+# === 首頁橫幅（準備 /source/images/cover.jpg）===
+banner:
+  image: /images/cover.jpg
+  title: 用資料與內容，打造個人品牌
+  subtitle: 國內旅遊・國外旅遊・青年國際交流・實習分享
+
+# === 側欄 widgets（左個人卡、右最近文/分類/標籤/目錄）===
+widgets:
+  - type: profile
+    position: left
+    author: Melody Kao
+    author_title: Content × Data Learner
+    location: Taiwan
+    avatar: /images/avatar.jpg
+    social_links:
+      github: https://github.com/melodykao000
+      instagram: https://instagram.com/你的IG
+      email: mailto:onpu92@gmail.com
+
+  - type: recent_posts
+    position: right
+    count: 5
+  - type: categories
+    position: right
+  - type: tags
+    position: right
+  - type: toc
+    position: right
+
+# === 文章列表卡片 / 摘要 / 縮圖 ===
+article:
+  thumbnail: true
+  readmore: true
+  toc: true
+  excerpt_length: 140
+
+# === 本地搜尋（你若有裝 searchdb 就會出現）===
+search:
+  type: insight
+
+# === 額外樣式檔（下一節放字體用）===
+stylesheets:
+  - /css/custom.css

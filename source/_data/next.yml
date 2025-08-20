@@ -1,0 +1,53 @@
+scheme: Gemini
+
+# 讓客製樣式載入
+custom_file_path:
+  style: source/_data/styles.styl
+
+# 左側放個人卡 + 最近文章（NexT 只有單側邊欄，兩邊效果用 CSS 模擬不了解就先這樣）
+sidebar:
+  position: left
+  display: post
+
+# 側欄內容（個人卡）
+avatar:
+  url: /img/avatar.jpg
+  rounded: true
+author: Melody
+author_title: Content × Data Learner
+location: Taiwan
+social:
+  GitHub: https://github.com/melodykao000 || fab fa-github
+  Instagram: https://instagram.com/你的IG || fab fa-instagram
+  Email: mailto:onpu92@gmail.com || fa fa-envelope
+social_icons:
+  enable: true
+
+# 導覽列
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-folder-open
+  tags: /tags/ || fa fa-tags
+  services: /services/ || fa fa-briefcase
+  about: /about/ || fa fa-user
+  contact: /contact/ || fa fa-envelope
+
+# 首頁摘要 + 卡片
+excerpt_description: true
+auto_excerpt: { enable: true, length: 140 }
+
+# 圖片燈箱 / 目錄 / 動效
+fancybox: true
+toc: { enable: true }
+motion: { enable: true }
+back2top: { enable: true, sidebar: true }
+reading_progress: { enable: true }
+
+# 本地搜尋（你已安裝 searchdb 才會生效）
+local_search: { enable: true, trigger: auto, top_n_per_article: 1 }
+
+footer:
+  since: 2025
+  icon: { name: fa fa-heart, animated: true }
+  copyright: { enable: true }

@@ -1,8 +1,16 @@
+# 產出 / 暫存
+public/
+.deploy_git/
+.cache/
+db.json
+
+# 相依
+node_modules/
+
+# 系統檔
 .DS_Store
 Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-_multiconfig.yml
+
+# 雜項
+npm-debug.log*
+yarn-error.log*
