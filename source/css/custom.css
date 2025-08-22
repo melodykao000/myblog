@@ -1,7 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&display=swap');
+/* === KPC Dropdown 修正：子選單浮出 === */
 
-html,body{
-  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-weight: 400;
+/* 保證 navbar 容器不裁切 dropdown */
+.kpc-dd,
+.kpc-dd .navbar-container,
+.kpc-dd .navbar-menu,
+.kpc-dd .navbar-start {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 2000 !important; /* 確保整條在最上層 */
 }
-h1,h2,h3{ font-weight: 800; }
+
+/* 父層要當定位點 */
+.kpc-dd .navbar-item.has-dropdown {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* 桌機版：子選單預設隱藏，hover 才顯示 */
+@media (min-width: 1088px) {
+  .kpc-dd .navbar-item.has-dropdown > .navbar-dropdown {
+    display: none !important;
+    position: absolute !important;   /* ← 浮出來 */
+    top: 100% !important;            /* 剛好貼在主選單下 */
+    left: 0 !important;
+
+    min-width: 220px !important;
+    background: #fff !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,.06) !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: 3000 !important;
+  }
+
+  /* hover 顯示 */
+  .kpc-dd .navbar-item.has-dropdown.is-hoverable:hover > .navbar-dropdown {
+    display: block !important;
+  }
+}
+
+/* 主連結保持在上層，避免 hover 區塊被擋 */
+.kpc-dd .navbar-item.has-dropdown > .navbar-link {
+  position: relative !important;
+  z-index: 4000 !important;
+}
+
+/* 子選單內的項目樣式 */
+.kpc-dd .navbar-dropdown .navbar-item {
+  padding: 8px 16px !important;
+  white-space: nowrap !important; /* 避免換行 */
+}
+.kpc-dd .navbar-dropdown .navbar-item:hover {
+  background: #f5f5f5 !important;
+}
+/* --- 強制修復：Bulma 夾殺 & 祖先裁切 --- */
+.kpc-dd,
+.kpc-dd .navbar,
+.kpc-dd .container.navbar-container,
+.kpc-dd .navbar-menu,
+.kpc-dd .navbar-start,
+.kpc-dd .navbar-brand,
+.kpc-dd .navbar-item.has-dropdown {
+  overflow: visible !important;
+}
+
+.kpc-dd .navbar { position: sticky !important; top:0; z-index: 3000; background:#fff; }
+
+/* 桌機：保證有水平選單、沒有漢堡 */
+@media (min-width:1088px){
+  .kpc-dd .navbar .navbar-menu { display:flex !important; height:auto !important; max-height:none !important; }
+  .kpc-dd .navbar-burger { display:none !important; }
+}
+
+/* 手機：只顯示漢堡、不顯示水平選單 */
+@media (max-width:1087px){
+  .kpc-dd .navbar .navbar-menu { display:none !important; }
+  .kpc-dd .navbar-burger { display:block !important; }
+}
+
+/* 桌機下拉：用更高權重硬壓顯示，避免被 Bulma 覆蓋 */
+.kpc-dd .navbar-item.has-dropdown { position: relative !important; }
+@media (min-width:1088px){
+  .kpc-dd .navbar-item.has-dropdown > .navbar-dropdown{
+    display: none !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: calc(100% + 8px) !important;
+    min-width: 220px !important;
+    background:#fff !important;
+    border:1px solid #eaeaea !important; border-radius:10px !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.06) !important;
+    padding:8px 0 !important; margin:0 !important;
+    z-index: 99999 !important;   /* 再拉超高 */
+    pointer-events: auto !important;
+  }
+  /* 關鍵：加上 kpc-dd 命名空間提高權重 */
+  .kpc-dd .navbar-item.has-dropdown:hover > .navbar-dropdown,
+  .kpc-dd .navbar-item.has-dropdown.is-hoverable:hover > .navbar-dropdown{
+    display: block !important;
+  }
+}
+
+/* 子選單項目：避免被 Bulma reset */
+.kpc-dd .navbar-dropdown .navbar-item{
+  display:block !important; padding:8px 16px !important; white-space:nowrap !important;
+}
+.kpc-dd .navbar-dropdown .navbar-item:hover{ background:#f5f5f5 !important; }
+
+/* 手機抽屜：確保覆蓋任何外部屬性 */
+.kpc-drawer{ z-index: 130 !important; }
+.kpc-backdrop{ z-index: 120 !important; }

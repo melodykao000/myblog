@@ -2,17 +2,42 @@ version: 6.1.1
 
 navbar:
   menu:
-    Home: /
-    Archives: /archives/
-    Categories: /categories/
-    Tags: /tags/
-    Services: /services/
-    About: /about/
-    Contact: /contact/
-  links:
-    GitHub:
-      icon: fab fa-github
-      url: https://github.com/melodykao000
+    服務:
+      children:
+        演講與工作坊:
+          url: /services/speaking/
+        自媒體合作:
+          url: /services/brand-partnership/
+        1:1 諮詢:
+          url: /services/consulting/
+
+    作品與案例:
+      children:
+        講座花絮與回饋:
+          url: /cases/speaking/
+        品牌合作案例:
+          url: /cases/brand/
+
+    部落格:
+      children:
+        青年機會與補助:
+          url: /blog/youth-opportunities/
+        實習與職涯:
+          url: /blog/internship-career/
+        美食與旅遊:
+          url: /blog/lifestyle/
+
+    關於我:
+      url: /about/
+    訂閱電子報:
+      url: /subscribe/
+
+
+
+links:
+  instagram:
+    icon: fab fa-instagram
+    url: https://www.instagram.com/__kpc._/
 
 banner:
   image: /images/cover.jpg
@@ -22,14 +47,12 @@ banner:
 widgets:
   - type: profile
     position: left
-    author: Melody Kao
-    author_title: Content × Data Learner
+    author: 高杯
+    author_title: 海外實習 x 青年資源分享
     location: Taiwan
     avatar: /images/avatar.jpg
     social_links:
-      github: https://github.com/melodykao000
-      instagram: https://instagram.com/你的IG
-      email: mailto:onpu92@gmail.com
+      instagram: https://www.instagram.com/__kpc._/
 
   - type: recent_posts
     position: right

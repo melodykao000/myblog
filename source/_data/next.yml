@@ -1,6 +1,7 @@
 scheme: Gemini
 
 # 讓客製樣式載入
+title: KPC's Studio
 custom_file_path:
   style: source/_data/styles.styl
 
@@ -13,12 +14,11 @@ sidebar:
 avatar:
   url: /img/avatar.jpg
   rounded: true
-author: Melody
-author_title: Content × Data Learner
+author: 高杯
+author_title: 海外實習 X 青年資源分享
 location: Taiwan
 social:
-  GitHub: https://github.com/melodykao000 || fab fa-github
-  Instagram: https://instagram.com/你的IG || fab fa-instagram
+  Instagram: https://www.instagram.com/__kpc._/ || fab fa-instagram
   Email: mailto:onpu92@gmail.com || fa fa-envelope
 social_icons:
   enable: true
